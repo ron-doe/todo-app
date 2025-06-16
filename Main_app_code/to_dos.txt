@@ -7,3 +7,4 @@ go to El Rey
 fix code
 debug
 testing
+gui test
