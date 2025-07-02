@@ -1,10 +1,10 @@
-from modules import functions
+from Main_app_code import functions
 import FreeSimpleGUI as sg
 import time
 import os
 
-if not os.path.exists("to_dos.txt"):
-    with open("to_dos.txt", "w") as file:
+if not os.path.exists("todos.txt"):
+    with open("todos.txt", "w") as file:
         pass
 
 sg.theme('Black')
@@ -66,7 +66,7 @@ while True:
         case 'todos':
             window['to-do'].update(value=values['todos'][0])
 
-        case sg.WINDOW_CLOSED:
+        case sg.WIN_CLOSED:
             break
 
 window.close()

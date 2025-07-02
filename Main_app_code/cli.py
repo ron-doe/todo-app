@@ -1,5 +1,4 @@
-from modules import functions
-
+from Main_app_code import functions
 
 import time
 now = time.strftime("%b %d, %Y %H:%M:%S")
@@ -17,10 +16,10 @@ while True:
 
         todos.append(todo)
 
-        functions.write_todos(todos, "to_dos.txt")
+        functions.write_todos(todos, "todos.txt")
 
     elif user_action.startswith('show'):
-        todos = functions.get_todos("to_dos.txt")
+        todos = functions.get_todos("todos.txt")
 
         for index, item in enumerate(todos, start=1):
             """enumerate and capitalizes all to dos"""
@@ -44,7 +43,7 @@ while True:
             new_todo = input("Enter new to_do")
             todos[number] = new_todo +'\n'
 
-            functions.write_todos(todos, "to_dos.txt")
+            functions.write_todos(todos, "todos.txt")
         except ValueError:
             print("To edit, enter a number. Let's go back to the first menu")
             continue
@@ -65,7 +64,7 @@ while True:
 
             todos.pop(number)
 
-            functions.write_todos(todos, "to_dos.txt")
+            functions.write_todos(todos, "todos.txt")
 
             message = f"To-do {completed_todo} has been completed."
             print(message)
